@@ -1,0 +1,59 @@
+<template name="tweetStream">
+
+    <div id="stream" class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3">
+                {{#if currentUser}}
+                    {{> composeTweet}}
+                {{/if}}
+
+                <!-- trending topics -->
+                <div id="trending" class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>Trending Topics</h4>
+                    </div>
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item">#food</a>
+                        <a href="#" class="list-group-item">#meteorclub</a>
+                        <a href="#" class="list-group-item">#loremipsumdolor</a>
+                        <a href="#" class="list-group-item">#dracodormiens</a>
+                        <a href="#" class="list-group-item">#atmospherejs</a>
+                    </ul>
+                </div>
+            </div>
+            {{#if currentUser}}
+                {{> tweets headline="Tweets"}}
+            {{/if}}
+
+            <!-- who to follow -->
+            <!-- responsive works if tweet stream is long enough, but otherwise it hangs.
+      can fix with javascript but i dunno if you wanna go through that much trouble. -->
+
+            <div id="who-to-follow" class="col-md-8 col-md-offset-4 col-lg-3 col-lg-offset-0">
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+                        <h4>Who to follow</h4>
+                    </div>
+
+                    <ul class="list-group">
+                        <a href="#" class="list-group-item">
+                            <strong>Josh Owens</strong> @joshowens</a>
+                        <a href="#" class="list-group-item">
+                            <strong>Sacha Greif</strong> @sachagreif</a>
+                        <a href="#" class="list-group-item">
+                            <strong>Tom Coleman</strong> @tmeasday</a>
+                    </ul>
+
+                    <div class="panel-footer short">
+                        <p>Find <a href="#">people you know</a>?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="userPill">
+    <span class="label label-warning">{{username}}</span>
+</template>

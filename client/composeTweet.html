@@ -1,0 +1,50 @@
+<template name="composeTweet">
+    <div id="profile-panel" class="panel panel-default">
+        <div class="media panel-body">
+
+            <!-- profile photo -->
+            <a class="pull-left" href="#">
+                <img class="media-object small-profile-image" src="/images/face.jpg" alt="...">
+            </a>
+
+            <!-- profile information -->
+            <div class="media-body">
+                <span class="username">
+                    <strong>{{user.profile.name}}</strong>
+                </span>
+                <br>
+                <span class="handle">@{{user.username}}</span>
+            </div>
+
+            <!-- profile stats -->
+            <table id="profile-stats" class="table">
+                <tr class="head">
+                    <td>
+                        <strong>Tweets</strong>
+                    </td>
+                    <td>
+                        <strong>Following</strong>
+                    </td>
+                    <td>
+                        <strong>Followers</strong>
+                    </td>
+                </tr>
+                <tr class="numbers">
+                    <td>500</td>
+                    <td>240</td>
+                    <td>1,600</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- compose a tweet -->
+        <div class="panel-footer">
+            <form class="tweetSubmit">
+                {{> inputAutocomplete settings=settings class="form-control tweet-text" placeholder="Compose new Tweet..."}}
+                <div class="row">
+                    <input type="submit" class="btn btn-default btn-xs pull-right tweet-btn" value="Tweet">
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
